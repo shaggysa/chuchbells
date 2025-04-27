@@ -1,4 +1,4 @@
-#Churchbells
+# Churchbells
 
 Basic script designed to play bell chimes at a church. It is super lightweight and should run on practically any linux machine.
 
@@ -8,7 +8,7 @@ For everyday hymns, the default folder is used. There are special folders for Ch
 
 General and Easter chimes have been provided, and Christmas and July 4 chimes are being worked on. It will play any .wav files you place in the folder, so feel free to use your own sound files. 
 
-#Activation
+# Activation
 Currently, the best way to trigger the chimes is to set up a cron scheduler for the times you would like the bells to go off. For example, if I wanted to set them to go off at noon and six, the notation would be as follows:
 0 12,18 * * * /path/to/churchbells/bells.sh
 
