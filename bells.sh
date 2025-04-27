@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Configuration
-DEFAULT_FOLDER="./default"
-SPECIAL_DATES_DIR="./special"
-START_SOUND="./bell.wav"
-LOG_FILE="./bell_log.txt"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+DEFAULT_FOLDER="$SCRIPT_DIR/default"
+SPECIAL_DATES_DIR="$SCRIPT_DIR/special"
+START_SOUND="$SCRIPT_DIR/bell.wav"
+LOG_FILE="$SCRIPT_DIR/bell_log.txt"
 
 # Manual override
 OVERRIDE=""
@@ -68,7 +69,7 @@ function get_today_folder_name() {
 
 function play_bells() {
     folder_name=$(get_today_folder_name)
-    folder_path="./default"
+    folder_path="$SCRIPT_DIR/default"
 
     if [[ "$folder_name" != "default" ]]; then
         folder_path="$SPECIAL_DATES_DIR/$folder_name"
@@ -82,7 +83,7 @@ function play_bells() {
     fi
 
     # Build per-folder state file path
-    STATE_FILE="./.state_$folder_name"
+    STATE_FILE="$SCRIPT_DIR/.state_$folder_name"
 
     # Read files to play
     mapfile -t files < <(find "$folder_path" -maxdepth 1 -type f -name "*.wav" | sort)
