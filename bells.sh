@@ -22,6 +22,8 @@ done
 declare -A SPECIAL_DATES=(
     ["12-25"]="christmas"
     ["07-04"]="july4"
+    ["12-24"]="christmas"
+    
 )
 
 # Easter calculator (valid 1900–2099)
